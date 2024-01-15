@@ -3,4 +3,4 @@
 *.tfstate*
 .DS_Store
 
-terraform-proivider-epilot-customer
+terraform-provider-epilot-customer
