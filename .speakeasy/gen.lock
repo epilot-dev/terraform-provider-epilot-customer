@@ -4,9 +4,9 @@ management:
   docChecksum: 93598e9dfebedd4a0ef5f4dd2dbfbe4f
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.235.3
-  releaseVersion: 0.3.1
-  configChecksum: 96cdcfb7605bdb30729a85a79edc7136
+  generationVersion: 2.237.2
+  releaseVersion: 0.3.2
+  configChecksum: 8be99b0b4320adfa4891e270cfaeabe4
   repoURL: https://github.com/epilot-dev/terraform-provider-epilot-customer.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   terraform:
     additionalProperties: 0.1.2
     core: 3.8.4
-    globalSecurity: 2.81.2
+    globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
 generatedFiles:
   - internal/sdk/account.go
