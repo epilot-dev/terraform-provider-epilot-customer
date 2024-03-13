@@ -3,17 +3,17 @@ id: 2c3bd0de-a9d3-438a-a055-80969ac73e6f
 management:
   docChecksum: 93598e9dfebedd4a0ef5f4dd2dbfbe4f
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.4.0
-  configChecksum: d48077c9d867370b9ee7b014593656dc
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.4.1
+  configChecksum: c17329b26298537952deb6606c30286c
   repoURL: https://github.com/epilot-dev/terraform-provider-epilot-customer.git
   repoSubDirectory: .
   published: true
 features:
   terraform:
     additionalProperties: 0.1.2
-    core: 3.10.2
+    core: 3.10.3
     globalSecurity: 2.81.5
     globalServerURLs: 2.82.1
 generatedFiles:
