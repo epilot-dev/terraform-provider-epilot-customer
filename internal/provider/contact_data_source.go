@@ -5,8 +5,9 @@ package provider
 import (
 	"context"
 	"fmt"
+	tfTypes "github.com/epilot-dev/terraform-provider-epilot-customer/internal/provider/types"
 	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk"
-	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/pkg/models/operations"
+	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/models/operations"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
@@ -28,26 +29,26 @@ type ContactDataSource struct {
 
 // ContactDataSourceModel describes the data model.
 type ContactDataSourceModel struct {
-	ACL            BaseEntityACL     `tfsdk:"acl"`
-	CreatedAt      types.String      `tfsdk:"created_at"`
-	Org            types.String      `tfsdk:"org"`
-	Owners         []BaseEntityOwner `tfsdk:"owners"`
-	Schema         types.String      `tfsdk:"schema"`
-	Tags           []types.String    `tfsdk:"tags"`
-	Title1         types.String      `tfsdk:"title1"`
-	UpdatedAt      types.String      `tfsdk:"updated_at"`
-	Account        *BaseRelation     `tfsdk:"account"`
-	Address        []BaseAddress     `tfsdk:"address"`
-	Birthdate      types.String      `tfsdk:"birthdate"`
-	CustomerNumber types.String      `tfsdk:"customer_number"`
-	Email          []BaseEmail       `tfsdk:"email"`
-	FirstName      types.String      `tfsdk:"first_name"`
-	Hydrate        types.Bool        `tfsdk:"hydrate"`
-	ID             types.String      `tfsdk:"id"`
-	LastName       types.String      `tfsdk:"last_name"`
-	Phone          []BasePhone       `tfsdk:"phone"`
-	Salutation     types.String      `tfsdk:"salutation"`
-	Title          types.String      `tfsdk:"title"`
+	ACL            tfTypes.BaseEntityACL     `tfsdk:"acl"`
+	CreatedAt      types.String              `tfsdk:"created_at"`
+	Org            types.String              `tfsdk:"org"`
+	Owners         []tfTypes.BaseEntityOwner `tfsdk:"owners"`
+	Schema         types.String              `tfsdk:"schema"`
+	Tags           []types.String            `tfsdk:"tags"`
+	Title1         types.String              `tfsdk:"title1"`
+	UpdatedAt      types.String              `tfsdk:"updated_at"`
+	Account        *tfTypes.BaseRelation     `tfsdk:"account"`
+	Address        []tfTypes.BaseAddress     `tfsdk:"address"`
+	Birthdate      types.String              `tfsdk:"birthdate"`
+	CustomerNumber types.String              `tfsdk:"customer_number"`
+	Email          []tfTypes.BaseEmail       `tfsdk:"email"`
+	FirstName      types.String              `tfsdk:"first_name"`
+	Hydrate        types.Bool                `tfsdk:"hydrate"`
+	ID             types.String              `tfsdk:"id"`
+	LastName       types.String              `tfsdk:"last_name"`
+	Phone          []tfTypes.BasePhone       `tfsdk:"phone"`
+	Salutation     types.String              `tfsdk:"salutation"`
+	Title          types.String              `tfsdk:"title"`
 }
 
 // Metadata returns the data source type name.

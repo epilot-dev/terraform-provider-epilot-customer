@@ -4,7 +4,8 @@ package provider
 
 import (
 	"encoding/json"
-	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/pkg/models/shared"
+	tfTypes "github.com/epilot-dev/terraform-provider-epilot-customer/internal/provider/types"
+	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/models/shared"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"time"
 )
@@ -158,7 +159,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			r.Owners = r.Owners[:len(resp.Owners)]
 		}
 		for ownersCount, ownersItem := range resp.Owners {
-			var owners1 BaseEntityOwner
+			var owners1 tfTypes.BaseEntityOwner
 			owners1.OrgID = types.StringValue(ownersItem.OrgID)
 			owners1.UserID = types.StringPointerValue(ownersItem.UserID)
 			if ownersCount+1 > len(r.Owners) {
@@ -179,7 +180,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			r.Address = r.Address[:len(resp.Address)]
 		}
 		for addressCount, addressItem := range resp.Address {
-			var address1 BaseAddress
+			var address1 tfTypes.BaseAddress
 			address1.ID = types.StringPointerValue(addressItem.ID)
 			address1.Tags = nil
 			for _, v := range addressItem.Tags {
@@ -213,7 +214,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			r.Email = r.Email[:len(resp.Email)]
 		}
 		for emailCount, emailItem := range resp.Email {
-			var email1 BaseEmail
+			var email1 tfTypes.BaseEmail
 			email1.ID = types.StringPointerValue(emailItem.ID)
 			email1.Tags = nil
 			for _, v := range emailItem.Tags {
@@ -233,7 +234,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			r.Phone = r.Phone[:len(resp.Phone)]
 		}
 		for phoneCount, phoneItem := range resp.Phone {
-			var phone1 BasePhone
+			var phone1 tfTypes.BasePhone
 			phone1.ID = types.StringPointerValue(phoneItem.ID)
 			phone1.Tags = nil
 			for _, v := range phoneItem.Tags {
