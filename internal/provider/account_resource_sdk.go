@@ -140,15 +140,15 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			additionalPropertiesResult, _ := json.Marshal(resp.ACL.AdditionalProperties)
 			r.ACL.AdditionalProperties = types.StringValue(string(additionalPropertiesResult))
 		}
-		r.ACL.Delete = nil
+		r.ACL.Delete = []types.String{}
 		for _, v := range resp.ACL.Delete {
 			r.ACL.Delete = append(r.ACL.Delete, types.StringValue(v))
 		}
-		r.ACL.Edit = nil
+		r.ACL.Edit = []types.String{}
 		for _, v := range resp.ACL.Edit {
 			r.ACL.Edit = append(r.ACL.Edit, types.StringValue(v))
 		}
-		r.ACL.View = nil
+		r.ACL.View = []types.String{}
 		for _, v := range resp.ACL.View {
 			r.ACL.View = append(r.ACL.View, types.StringValue(v))
 		}
@@ -170,7 +170,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 			}
 		}
 		r.Schema = types.StringValue(resp.Schema)
-		r.Tags = nil
+		r.Tags = []types.String{}
 		for _, v := range resp.Tags {
 			r.Tags = append(r.Tags, types.StringValue(v))
 		}
@@ -182,7 +182,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 		for addressCount, addressItem := range resp.Address {
 			var address1 tfTypes.BaseAddress
 			address1.ID = types.StringPointerValue(addressItem.ID)
-			address1.Tags = nil
+			address1.Tags = []types.String{}
 			for _, v := range addressItem.Tags {
 				address1.Tags = append(address1.Tags, types.StringValue(v))
 			}
@@ -216,7 +216,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 		for emailCount, emailItem := range resp.Email {
 			var email1 tfTypes.BaseEmail
 			email1.ID = types.StringPointerValue(emailItem.ID)
-			email1.Tags = nil
+			email1.Tags = []types.String{}
 			for _, v := range emailItem.Tags {
 				email1.Tags = append(email1.Tags, types.StringValue(v))
 			}
@@ -236,7 +236,7 @@ func (r *AccountResourceModel) RefreshFromSharedAccount(resp *shared.Account) {
 		for phoneCount, phoneItem := range resp.Phone {
 			var phone1 tfTypes.BasePhone
 			phone1.ID = types.StringPointerValue(phoneItem.ID)
-			phone1.Tags = nil
+			phone1.Tags = []types.String{}
 			for _, v := range phoneItem.Tags {
 				phone1.Tags = append(phone1.Tags, types.StringValue(v))
 			}
