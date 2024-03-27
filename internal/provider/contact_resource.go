@@ -5,8 +5,9 @@ package provider
 import (
 	"context"
 	"fmt"
+	tfTypes "github.com/epilot-dev/terraform-provider-epilot-customer/internal/provider/types"
 	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk"
-	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/pkg/models/operations"
+	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/models/operations"
 	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/validators"
 	speakeasy_stringvalidators "github.com/epilot-dev/terraform-provider-epilot-customer/internal/validators/stringvalidators"
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
@@ -33,25 +34,25 @@ type ContactResource struct {
 
 // ContactResourceModel describes the resource data model.
 type ContactResourceModel struct {
-	ACL            BaseEntityACL     `tfsdk:"acl"`
-	CreatedAt      types.String      `tfsdk:"created_at"`
-	ID             types.String      `tfsdk:"id"`
-	Org            types.String      `tfsdk:"org"`
-	Owners         []BaseEntityOwner `tfsdk:"owners"`
-	Schema         types.String      `tfsdk:"schema"`
-	Tags           []types.String    `tfsdk:"tags"`
-	Title1         types.String      `tfsdk:"title1"`
-	UpdatedAt      types.String      `tfsdk:"updated_at"`
-	Account        *BaseRelation     `tfsdk:"account"`
-	Address        []BaseAddress     `tfsdk:"address"`
-	Birthdate      types.String      `tfsdk:"birthdate"`
-	CustomerNumber types.String      `tfsdk:"customer_number"`
-	Email          []BaseEmail       `tfsdk:"email"`
-	FirstName      types.String      `tfsdk:"first_name"`
-	LastName       types.String      `tfsdk:"last_name"`
-	Phone          []BasePhone       `tfsdk:"phone"`
-	Salutation     types.String      `tfsdk:"salutation"`
-	Title          types.String      `tfsdk:"title"`
+	ACL            tfTypes.BaseEntityACL     `tfsdk:"acl"`
+	CreatedAt      types.String              `tfsdk:"created_at"`
+	ID             types.String              `tfsdk:"id"`
+	Org            types.String              `tfsdk:"org"`
+	Owners         []tfTypes.BaseEntityOwner `tfsdk:"owners"`
+	Schema         types.String              `tfsdk:"schema"`
+	Tags           []types.String            `tfsdk:"tags"`
+	Title1         types.String              `tfsdk:"title1"`
+	UpdatedAt      types.String              `tfsdk:"updated_at"`
+	Account        *tfTypes.BaseRelation     `tfsdk:"account"`
+	Address        []tfTypes.BaseAddress     `tfsdk:"address"`
+	Birthdate      types.String              `tfsdk:"birthdate"`
+	CustomerNumber types.String              `tfsdk:"customer_number"`
+	Email          []tfTypes.BaseEmail       `tfsdk:"email"`
+	FirstName      types.String              `tfsdk:"first_name"`
+	LastName       types.String              `tfsdk:"last_name"`
+	Phone          []tfTypes.BasePhone       `tfsdk:"phone"`
+	Salutation     types.String              `tfsdk:"salutation"`
+	Title          types.String              `tfsdk:"title"`
 }
 
 func (r *ContactResource) Metadata(ctx context.Context, req resource.MetadataRequest, resp *resource.MetadataResponse) {

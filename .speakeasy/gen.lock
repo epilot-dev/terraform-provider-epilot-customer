@@ -3,20 +3,68 @@ id: 2c3bd0de-a9d3-438a-a055-80969ac73e6f
 management:
   docChecksum: 93598e9dfebedd4a0ef5f4dd2dbfbe4f
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.231.0
-  releaseVersion: 0.3.0
-  configChecksum: bfaae833feba9c8be5ca1d7a8643fbed
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 0.6.0
+  configChecksum: 6a4aa035f9984f88d5d08942081a7ac2
+  repoURL: https://github.com/epilot-dev/terraform-provider-epilot-customer.git
+  repoSubDirectory: .
+  published: true
 features:
   terraform:
     additionalProperties: 0.1.2
-    core: 3.8.1
-    globalSecurity: 2.81.2
+    core: 3.12.1
+    globalSecurity: 2.81.6
     globalServerURLs: 2.82.1
 generatedFiles:
   - internal/sdk/account.go
   - internal/sdk/contact.go
   - internal/sdk/sdk.go
+  - internal/sdk/models/errors/sdkerror.go
+  - internal/sdk/types/bigint.go
+  - internal/sdk/types/date.go
+  - internal/sdk/types/datetime.go
+  - internal/sdk/types/decimal.go
+  - internal/sdk/types/pointers.go
+  - internal/sdk/internal/utils/contenttype.go
+  - internal/sdk/internal/utils/form.go
+  - internal/sdk/internal/utils/headers.go
+  - internal/sdk/internal/utils/json.go
+  - internal/sdk/internal/utils/pathparams.go
+  - internal/sdk/internal/utils/queryparams.go
+  - internal/sdk/internal/utils/requestbody.go
+  - internal/sdk/internal/utils/retries.go
+  - internal/sdk/internal/utils/security.go
+  - internal/sdk/internal/utils/utils.go
+  - internal/sdk/models/operations/createaccount.go
+  - internal/sdk/models/operations/deleteaccount.go
+  - internal/sdk/models/operations/getaccount.go
+  - internal/sdk/models/operations/patchaccount.go
+  - internal/sdk/models/operations/updateaccount.go
+  - internal/sdk/models/operations/createcontact.go
+  - internal/sdk/models/operations/deletecontact.go
+  - internal/sdk/models/operations/getcontact.go
+  - internal/sdk/models/operations/patchcontact.go
+  - internal/sdk/models/operations/updatecontact.go
+  - internal/sdk/models/shared/servererror.go
+  - internal/sdk/models/shared/clienterror.go
+  - internal/sdk/models/shared/account.go
+  - internal/sdk/models/shared/basephone.go
+  - internal/sdk/models/shared/baseemail.go
+  - internal/sdk/models/shared/baseaddress.go
+  - internal/sdk/models/shared/baseentityowner.go
+  - internal/sdk/models/shared/baseentityacl.go
+  - internal/sdk/models/shared/accountcreate.go
+  - internal/sdk/models/shared/baseaccount.go
+  - internal/sdk/models/shared/contact.go
+  - internal/sdk/models/shared/baserelation.go
+  - internal/sdk/models/shared/contactcreate.go
+  - internal/sdk/models/shared/basecontact.go
+  - internal/sdk/models/shared/security.go
+  - internal/sdk/.gitignore
+  - internal/sdk/.gitattributes
+  - internal/sdk/internal/hooks/registration.go
+  - internal/sdk/internal/hooks/hooks.go
   - examples/README.md
   - go.mod
   - go.sum
@@ -45,22 +93,6 @@ generatedFiles:
   - internal/provider/reflect/slice.go
   - internal/provider/reflect/struct.go
   - internal/provider/utils.go
-  - internal/sdk/pkg/models/sdkerrors/sdkerror.go
-  - internal/sdk/pkg/types/bigint.go
-  - internal/sdk/pkg/types/date.go
-  - internal/sdk/pkg/types/datetime.go
-  - internal/sdk/pkg/types/decimal.go
-  - internal/sdk/pkg/types/pointers.go
-  - internal/sdk/pkg/utils/contenttype.go
-  - internal/sdk/pkg/utils/form.go
-  - internal/sdk/pkg/utils/headers.go
-  - internal/sdk/pkg/utils/json.go
-  - internal/sdk/pkg/utils/pathparams.go
-  - internal/sdk/pkg/utils/queryparams.go
-  - internal/sdk/pkg/utils/requestbody.go
-  - internal/sdk/pkg/utils/retries.go
-  - internal/sdk/pkg/utils/security.go
-  - internal/sdk/pkg/utils/utils.go
   - internal/validators/DateValidator.go
   - internal/validators/ExactlyOneChild.go
   - internal/validators/JSONParseValidator.go
@@ -77,38 +109,13 @@ generatedFiles:
   - main.go
   - terraform-registry-manifest.json
   - tools/tools.go
-  - internal/sdk/pkg/models/operations/createaccount.go
-  - internal/sdk/pkg/models/operations/deleteaccount.go
-  - internal/sdk/pkg/models/operations/getaccount.go
-  - internal/sdk/pkg/models/operations/patchaccount.go
-  - internal/sdk/pkg/models/operations/updateaccount.go
-  - internal/sdk/pkg/models/operations/createcontact.go
-  - internal/sdk/pkg/models/operations/deletecontact.go
-  - internal/sdk/pkg/models/operations/getcontact.go
-  - internal/sdk/pkg/models/operations/patchcontact.go
-  - internal/sdk/pkg/models/operations/updatecontact.go
-  - internal/sdk/pkg/models/shared/servererror.go
-  - internal/sdk/pkg/models/shared/clienterror.go
-  - internal/sdk/pkg/models/shared/account.go
-  - internal/sdk/pkg/models/shared/basephone.go
-  - internal/sdk/pkg/models/shared/baseemail.go
-  - internal/sdk/pkg/models/shared/baseaddress.go
-  - internal/sdk/pkg/models/shared/baseentityowner.go
-  - internal/sdk/pkg/models/shared/baseentityacl.go
-  - internal/sdk/pkg/models/shared/accountcreate.go
-  - internal/sdk/pkg/models/shared/baseaccount.go
-  - internal/sdk/pkg/models/shared/contact.go
-  - internal/sdk/pkg/models/shared/baserelation.go
-  - internal/sdk/pkg/models/shared/contactcreate.go
-  - internal/sdk/pkg/models/shared/basecontact.go
-  - internal/sdk/pkg/models/shared/security.go
-  - internal/provider/type_base_entity_acl.go
-  - internal/provider/type_base_entity_owner.go
-  - internal/provider/type_base_address.go
-  - internal/provider/type_base_email.go
-  - internal/provider/type_base_phone.go
-  - internal/provider/type_dollar_relation.go
-  - internal/provider/type_base_relation.go
+  - internal/provider/types/base_entity_acl.go
+  - internal/provider/types/base_entity_owner.go
+  - internal/provider/types/base_address.go
+  - internal/provider/types/base_email.go
+  - internal/provider/types/base_phone.go
+  - internal/provider/types/dollar_relation.go
+  - internal/provider/types/base_relation.go
   - USAGE.md
   - internal/provider/provider.go
   - examples/provider/provider.tf

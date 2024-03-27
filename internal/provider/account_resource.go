@@ -5,8 +5,9 @@ package provider
 import (
 	"context"
 	"fmt"
+	tfTypes "github.com/epilot-dev/terraform-provider-epilot-customer/internal/provider/types"
 	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk"
-	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/pkg/models/operations"
+	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/sdk/models/operations"
 	"github.com/epilot-dev/terraform-provider-epilot-customer/internal/validators"
 	speakeasy_stringvalidators "github.com/epilot-dev/terraform-provider-epilot-customer/internal/validators/stringvalidators"
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
@@ -33,21 +34,21 @@ type AccountResource struct {
 
 // AccountResourceModel describes the resource data model.
 type AccountResourceModel struct {
-	ACL            BaseEntityACL     `tfsdk:"acl"`
-	CreatedAt      types.String      `tfsdk:"created_at"`
-	ID             types.String      `tfsdk:"id"`
-	Org            types.String      `tfsdk:"org"`
-	Owners         []BaseEntityOwner `tfsdk:"owners"`
-	Schema         types.String      `tfsdk:"schema"`
-	Tags           []types.String    `tfsdk:"tags"`
-	Title          types.String      `tfsdk:"title"`
-	UpdatedAt      types.String      `tfsdk:"updated_at"`
-	Address        []BaseAddress     `tfsdk:"address"`
-	CustomerNumber types.String      `tfsdk:"customer_number"`
-	Email          []BaseEmail       `tfsdk:"email"`
-	Name           types.String      `tfsdk:"name"`
-	Phone          []BasePhone       `tfsdk:"phone"`
-	Website        types.String      `tfsdk:"website"`
+	ACL            tfTypes.BaseEntityACL     `tfsdk:"acl"`
+	CreatedAt      types.String              `tfsdk:"created_at"`
+	ID             types.String              `tfsdk:"id"`
+	Org            types.String              `tfsdk:"org"`
+	Owners         []tfTypes.BaseEntityOwner `tfsdk:"owners"`
+	Schema         types.String              `tfsdk:"schema"`
+	Tags           []types.String            `tfsdk:"tags"`
+	Title          types.String              `tfsdk:"title"`
+	UpdatedAt      types.String              `tfsdk:"updated_at"`
+	Address        []tfTypes.BaseAddress     `tfsdk:"address"`
+	CustomerNumber types.String              `tfsdk:"customer_number"`
+	Email          []tfTypes.BaseEmail       `tfsdk:"email"`
+	Name           types.String              `tfsdk:"name"`
+	Phone          []tfTypes.BasePhone       `tfsdk:"phone"`
+	Website        types.String              `tfsdk:"website"`
 }
 
 func (r *AccountResource) Metadata(ctx context.Context, req resource.MetadataRequest, resp *resource.MetadataResponse) {
